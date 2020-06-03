@@ -1,0 +1,93 @@
+{
+  "users": [
+    {
+      "id": "5ea2b9ad69cfa8e9530bddf4",
+      "isActive": true,
+      "isAdmin": false,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "age": "25",
+      "name": "Dina Mcfadden",
+      "email": "dinamcfadden@volax.com",
+      "password": 12345
+    },
+    {
+      "id": "5ea2b9ade2194651588a3def",
+      "isActive": true,
+      "isAdmin": false,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "age": "34",
+      "name": "Lesa Wooten",
+      "email": "lesawooten@volax.com",
+      "password": 12345
+    },
+    {
+      "id": "5ea2b9adb1fbb3636884b4db",
+      "isActive": true,
+      "isAdmin": false,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "age": 24,
+      "name": "Salazar Rodriquez",
+      "email": "salazarrodriquez@volax.com",
+      "password": 12345
+    },
+    {
+      "id": "5ea2b9ad60b5496e7bbb2f62",
+      "isActive": true,
+      "isAdmin": false,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "age": 38,
+      "name": "Powers Pugh",
+      "email": "powerspugh@volax.com",
+      "password": 12345
+    },
+    {
+      "name": "Lusian",
+      "email": "sunni98@abv.bg",
+      "password": 12345,
+      "age": 21,
+      "isActive": true,
+      "isAdmin": true,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "id": "X9L2vEe"
+    },
+    {
+      "name": "Test Testov",
+      "age": "21",
+      "email": "test@test.com",
+      "password": "12345",
+      "isAdmin": false,
+      "isActive": true,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "id": "Gi97kei"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "5ea2b9dfgbdd60b5496e7bbb2",
+      "title": "Task 1",
+      "description": "Do smth",
+      "authorId": "5ea2b9ad60b5496e7bbb2f62",
+      "authorName": "Powers Pugh",
+      "duration": "5",
+      "status": "InProgress"
+    },
+    {
+      "title": "Another one",
+      "description": "Let's see",
+      "authorId": "X9L2vEe",
+      "authorName": "Lusian",
+      "duration": "2",
+      "status": "ToDo",
+      "id": "rnCFPth"
+    },
+    {
+      "title": "Done",
+      "description": "It's done, my G",
+      "authorId": "X9L2vEe",
+      "authorName": "Lusian",
+      "status": "Done",
+      "duration": "1",
+      "id": "opD28-c"
+    }
+  ]
+}
