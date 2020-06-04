@@ -59,6 +59,26 @@
       "isActive": true,
       "picture": "https://picsum.photos/200/300?random=1",
       "id": "Gi97kei"
+    },
+    {
+      "name": "Alex",
+      "email": "alex@abv.bg",
+      "password": "12345",
+      "age": "21",
+      "isActive": true,
+      "isAdmin": false,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "id": "-P6__Ze"
+    },
+    {
+      "name": "Captain Jimo",
+      "age": "21",
+      "email": "captainjimo@test.com",
+      "password": "12345",
+      "isAdmin": false,
+      "isActive": true,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "id": "7GXNvvp"
     }
   ],
   "tasks": [
@@ -88,6 +108,24 @@
       "status": "Done",
       "duration": "1",
       "id": "opD28-c"
+    },
+    {
+      "title": "Alex's Task",
+      "description": "Something something",
+      "authorId": "-P6__Ze",
+      "authorName": "Alex",
+      "status": "ToDo",
+      "duration": "2.5",
+      "id": "-47rasc"
+    },
+    {
+      "title": "Execute Order 66",
+      "description": "Dew it",
+      "authorId": "X9L2vEe",
+      "authorName": "Lusian",
+      "status": "Done",
+      "duration": "420",
+      "id": "5cwFjKt"
     }
   ]
 }
