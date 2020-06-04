@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { deleteTasksForAuthor } from './tasks.api';
 
 const apiUrl = 'http://localhost:3005/';
 
@@ -60,5 +61,6 @@ export function saveUser(userData) {
 }
 
 export function deleteUser(id) {
+    deleteTasksForAuthor(id);
     return axios.delete(`${apiUrl}users/${id}`);
 }
