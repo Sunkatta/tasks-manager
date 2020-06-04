@@ -3,7 +3,7 @@ import './Login.css';
 import { login } from '../../../core/api/users.api';
 import { Redirect, Link } from 'react-router-dom';
 
-export function Login(props) {
+export function Login() {
 
     const[userData, setUserData] = useState({});
     const[isLoggedUser, setLoggedUser] = useState(false);

@@ -24,14 +24,7 @@ export function Header() {
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
                         <Link className="nav-link" to="/users">Users</Link>
-                    </li> 
-                    <>
-                    { loggedUser && loggedUser.isAdmin && 
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/users/create">Create User</Link>
                     </li>
-                    }
-                    </>
                     <li className="nav-item">
                         <Link className="nav-link" to="/tasks">Tasks</Link>
                     </li>

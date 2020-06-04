@@ -7,7 +7,6 @@ export function UserEdit(props) {
 
     const [editedUser, setEditedUser] = useState({name: '', age: 0, email: '', password: '', isAdmin: false, isActive: false});
     const [shouldRedirect, setShouldRedirect] = useState(false);
-    let isAdmin = false;
     
     const onInputChange = (event) => {
         event.persist();
@@ -31,10 +30,9 @@ export function UserEdit(props) {
         if (props.computedMatch.params.id) {
             getUserById(props.computedMatch.params.id).then((user) => {
                 setEditedUser(user.data);
-                isAdmin = user.data.isAdmin;
             });
         }
-    }, []);
+    }, [props.computedMatch.params.id]);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
