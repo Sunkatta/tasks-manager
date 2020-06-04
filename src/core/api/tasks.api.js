@@ -31,7 +31,7 @@ export function saveTask(taskData) {
     taskData.authorId = loggedUser.id;
     taskData.authorName = loggedUser.name;
     if (!taskData.status) {
-        taskData.status = taskStatus.Active;
+        taskData.status = taskStatus.ToDo;
     }
 
     return axios.post(`${apiUrl}/tasks`, taskData);
@@ -59,6 +59,8 @@ export function deleteTask(id) {
 
 export async function deleteTasksForAuthor(authorId) {
     const tasks = await getTasksByAuthorId(authorId);
+
+    console.log(tasks)
 
     tasks.forEach(task => {
         deleteTask(task.id);
