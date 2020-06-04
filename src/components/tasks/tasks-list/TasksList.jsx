@@ -1,9 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { getAllTasks, deleteTask } from '../../../core/api/tasks.api';
+import { getAllTasks, deleteTask, taskStatus } from '../../../core/api/tasks.api';
 import { TaskCard } from '../task-card/TaskCard';
 import { Link } from 'react-router-dom';
+import './TasksList.css';
 
 export function TasksList(props) {
     const [tasks, setTasks] = useState([]);
@@ -33,7 +34,23 @@ export function TasksList(props) {
                     </div>
                 </div>
             </div>
-            { tasks.map((task) => <TaskCard task={task} key={task.id} onDeleteClick={onDelete}></TaskCard>)}
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-3">
+                        <h3>To Do</h3>
+                        { tasks.map((task) => (task.status === taskStatus.ToDo && <TaskCard task={task} key={task.id} onDeleteClick={onDelete}></TaskCard>))}
+                    </div>
+                    <div className="col-md-3">
+                        <h3>In Progress</h3>
+                        { tasks.map((task) => (task.status === taskStatus.InProgress && <TaskCard task={task} key={task.id} onDeleteClick={onDelete}></TaskCard>))}
+                    </div>
+                    <div className="col-md-3">
+                        <h3>Done</h3>
+                        { tasks.map((task) => (task.status === taskStatus.Done && <TaskCard task={task} key={task.id} onDeleteClick={onDelete}></TaskCard>))}
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 }
