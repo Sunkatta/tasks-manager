@@ -38,7 +38,7 @@ export function TaskCard({ task, onDeleteClick }) {
             </div>
             <div className="card-footer">
                 <div>Author: { task.authorName }</div>
-                <div>Status: { task.status }</div>
+                <div>Duration: { task.duration } hours</div>
             </div>
         </div>
     );
