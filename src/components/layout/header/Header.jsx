@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { logout, getLoggedUser } from '../../../core/api/users.api';
+import { logout } from '../../../core/api/users.api';
 
 export function Header() {
-    const loggedUser = getLoggedUser();
-
     const [isLoggedOut, setLogoutFlag] = useState(false);
 
-    const onLogout = (event) => {
+    const onLogout = () => {
         logout();
         setLogoutFlag(true);
     }

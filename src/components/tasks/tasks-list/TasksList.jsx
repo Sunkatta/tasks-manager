@@ -50,7 +50,6 @@ export function TasksList(props) {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }

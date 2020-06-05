@@ -60,8 +60,6 @@ export function deleteTask(id) {
 export async function deleteTasksForAuthor(authorId) {
     const tasks = await getTasksByAuthorId(authorId);
 
-    console.log(tasks)
-
     tasks.forEach(task => {
         deleteTask(task.id);
     });

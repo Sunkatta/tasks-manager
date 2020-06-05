@@ -25,7 +25,6 @@ export function Login() {
             setLoggedUser(true);
         }).catch((error) => {
             setErrorMessage(error.message);
-            console.log(error);
         });
     };
 

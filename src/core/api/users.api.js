@@ -37,7 +37,7 @@ export async function login(userData) {
     const loggedUser = users.find(u => u.email === userData.email && u.password.toString() === userData.password);
 
     if (loggedUser && !loggedUser.isActive) {
-        return new Error('User is inactive!');
+        throw new Error('This user account has been blocked!');
     }
 
     if (loggedUser) {

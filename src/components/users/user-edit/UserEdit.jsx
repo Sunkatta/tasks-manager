@@ -18,8 +18,6 @@ export function UserEdit(props) {
 
     const onCheckboxChange = (event) => {
         event.persist();
-        console.log(event.target.name);
-        console.log(event.target.value);
         setEditedUser((previousState) => ({
             ...previousState,
             [event.target.name]: event.target.checked
