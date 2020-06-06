@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { saveTask, getTaskById } from '../../../core/api/tasks.api';
+import { saveTask, getTaskById, getUserTasks } from '../../../core/api/tasks.api';
 import { Redirect } from 'react-router-dom';
 import { useEffect } from 'react';
 import './TaskEdit.css';
@@ -29,6 +29,16 @@ export function TaskEdit(props) {
         event.preventDefault();
         saveTask(currentTask).then(() => {
             setShouldRedirect(true);
+
+            if (localStorage.getItem('userTasks')) {
+                localStorage.removeItem('userTasks');
+            }
+
+            getUserTasks().then((userTasks) => {
+                localStorage.setItem('userTasks', JSON.stringify(userTasks));
+            }, (error) => {
+                console.log(error);
+            });
         }).catch((error) => {
             console.log(error);
         });
