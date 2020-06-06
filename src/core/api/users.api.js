@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { deleteTasksForAuthor } from './tasks.api';
+import { deleteTasksForAuthor, getTasksByAuthorId } from './tasks.api';
 
 const apiUrl = 'http://localhost:3005/';
 
@@ -24,8 +24,6 @@ export async function register(userData) {
 
     userData = {
         ...userData,
-        isActive: true,
-        isAdmin: false,
         picture: 'https://picsum.photos/200/300?random=1'
     }
 
@@ -42,6 +40,13 @@ export async function login(userData) {
 
     if (loggedUser) {
         localStorage.setItem('loggedUser', JSON.stringify(loggedUser));
+        
+        getTasksByAuthorId(loggedUser.id).then((tasks) => {
+            localStorage.setItem('userTasks', JSON.stringify(tasks));
+        }, (error) => {
+            console.log(error);
+        });
+
         return;
     }
 
@@ -50,6 +55,7 @@ export async function login(userData) {
 
 export function logout() {
     localStorage.removeItem('loggedUser');
+    localStorage.removeItem('userTasks');
 }
 
 export function saveUser(userData) {
