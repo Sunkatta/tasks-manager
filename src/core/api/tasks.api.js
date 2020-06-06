@@ -9,16 +9,10 @@ export const taskStatus = {
     Done: 'Done'
 }
 
-export async function getAllTasks(searchParams) {
+export async function getAllTasks() {
     const allTasks = (await axios.get(`${apiUrl}/tasks`)).data;
 
-    if (!searchParams) {
-        return allTasks;
-    }
-
-    const lowerParam = searchParams.toLowerCase();
-
-    return allTasks.filter(n => n.title.toLowerCase().includes(lowerParam) || n.content.toLowerCase().includes(lowerParam));
+    return allTasks;
 }
 
 export function saveTask(taskData) {
@@ -41,16 +35,16 @@ export function getTaskById(id) {
     return axios.get(`${apiUrl}/tasks/${id}`);
 }
 
-export async function getTasksByAuthorId(authorId, searchParams) {
-    const allTasks = await getAllTasks(searchParams);
+export async function getTasksByAuthorId(authorId) {
+    const allTasks = await getAllTasks();
 
     return allTasks.filter(task => task.authorId === authorId);
 }
 
-export function getUserTasks(searchParams) {
+export function getUserTasks() {
     const loggedUserId = getLoggedUser().id;
 
-    return getTasksByAuthorId(loggedUserId, searchParams);
+    return getTasksByAuthorId(loggedUserId);
 }
 
 export function deleteTask(id) {
