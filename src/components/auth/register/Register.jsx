@@ -5,7 +5,8 @@ import { Redirect, Link } from 'react-router-dom';
 
 export function Register() {
 
-    const[user, setUser] = useState({name: '', email: '', password: '', age: ''});
+    const[user, setUser] = useState({name: '', email: '', password: '', age: '', isActive: true, isAdmin: false});
+    const[errorMessage, setErrorMessage] = useState('')
 
     const onInputChange = (event) => {
         event.persist();
@@ -14,6 +15,8 @@ export function Register() {
             ...previousState,
             [event.target.name]: event.target.value
         }));
+
+        setErrorMessage('');
     }
 
     const onFormSubmit = (event) => {
@@ -25,7 +28,7 @@ export function Register() {
                 isRegistered: true
             });
         }).catch((error) => {
-            setUser({ errorMessage: error.message });
+            setErrorMessage(error.message);
         });
     }
 
@@ -34,7 +37,7 @@ export function Register() {
         { user.isRegistered && <Redirect to="/login"></Redirect>}
         <div className="register-wrapper">
             <form className="register-form" onSubmit={onFormSubmit}>
-                {user.errorMessage && <span className="text-danger">{user.errorMessage}</span>}
+                <span className="text-danger">{errorMessage}</span>
                 <div className="form-group">
                     <label htmlFor="name">Name: </label>
                     <input type="text" name="name" id="name" className="form-control" onChange={onInputChange} />
