@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { getLoggedUser } from '../../../core/api/users.api';
 import { taskStatus } from '../../../core/api/tasks.api';
 
@@ -30,7 +29,7 @@ export function TaskCard({ task, onDeleteClick }) {
         <div className={taskClassByType} style={taskCardStyle}>
             <div className="card-header">
                 <h3>{ task.title }</h3>
-                { (loggedUser.isAdmin || loggedUser.id === task.authorId) && <Link className="btn btn-outline-light mr-2" to={`tasks/edit/${task.id}`} task={task}>Edit</Link> }
+                { (loggedUser.isAdmin || loggedUser.id === task.authorId) && <a className="btn btn-outline-light mr-2" href={`http://localhost:3000/tasks/edit/${task.id}`}>Edit</a> }
                 { (loggedUser.isAdmin || loggedUser.id === task.authorId) && <button className="btn btn-outline-light" onClick={ () => onDeleteClick(task.id) }>Delete</button> }
             </div>
             <div className="card-body">
