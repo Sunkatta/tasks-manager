@@ -11,7 +11,7 @@ const styles = {
 export function Footer() {
     return (
         <div className="footer" style={styles}>
-            <span className="info">Footer works</span>
+            <span className="info">Task Manager 2020 &copy;</span>
         </div>
     );
 }
