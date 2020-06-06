@@ -51,16 +51,6 @@
       "id": "X9L2vEe"
     },
     {
-      "name": "Test Testov",
-      "age": "21",
-      "email": "test@test.com",
-      "password": "12345",
-      "isAdmin": false,
-      "isActive": true,
-      "picture": "https://picsum.photos/200/300?random=1",
-      "id": "Gi97kei"
-    },
-    {
       "name": "Alex",
       "email": "alex@abv.bg",
       "password": "12345",
@@ -79,18 +69,39 @@
       "isActive": true,
       "picture": "https://picsum.photos/200/300?random=1",
       "id": "7GXNvvp"
+    },
+    {
+      "name": "Test Testov",
+      "age": "21",
+      "email": "test@test.com",
+      "password": "12345",
+      "isAdmin": false,
+      "isActive": false,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "id": "esRjPzc"
+    },
+    {
+      "name": "Pesho",
+      "email": "pesho@pesho.com",
+      "password": "12345",
+      "age": "21",
+      "isActive": true,
+      "isAdmin": false,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "id": "vRznhso"
+    },
+    {
+      "name": "Active Admin",
+      "age": "690",
+      "email": "active@admin.com",
+      "password": "12345",
+      "isAdmin": true,
+      "isActive": true,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "id": "swQ_pq0"
     }
   ],
   "tasks": [
-    {
-      "id": "5ea2b9dfgbdd60b5496e7bbb2",
-      "title": "Task 1",
-      "description": "Do smth",
-      "authorId": "5ea2b9ad60b5496e7bbb2f62",
-      "authorName": "Powers Pugh",
-      "duration": "5",
-      "status": "InProgress"
-    },
     {
       "title": "Another one",
       "description": "Let's see",
@@ -115,7 +126,7 @@
       "authorId": "-P6__Ze",
       "authorName": "Alex",
       "status": "ToDo",
-      "duration": "2.5",
+      "duration": "5.5",
       "id": "-47rasc"
     },
     {
@@ -126,6 +137,15 @@
       "status": "Done",
       "duration": "420",
       "id": "5cwFjKt"
+    },
+    {
+      "title": "Smthhhhh",
+      "description": "1234",
+      "authorId": "X9L2vEe",
+      "authorName": "Lusian",
+      "status": "InProgress",
+      "duration": "5",
+      "id": "tUBpWQW"
     }
   ]
 }
